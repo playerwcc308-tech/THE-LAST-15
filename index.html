@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE LAST 15</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  background:#05070d;
+  color:white;
+  font-family:Arial,Helvetica,sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.screen{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:25px 15px;
+  position:relative;
+}
+
+.bg{
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 30%,#17254a 0%,#080b14 35%,#03040a 75%);
+  z-index:-2;
+}
+
+.glow{
+  position:fixed;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  background:#315cff;
+  filter:blur(120px);
+  opacity:.15;
+  top:15%;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:-1;
+}
+
+.box{
+  width:100%;
+  max-width:600px;
+  text-align:center;
+}
+
+.brand{
+  color:#aebfff;
+  font-size:13px;
+  letter-spacing:4px;
+  margin-bottom:20px;
+  font-weight:bold;
+}
+
+h1{
+  font-size:52px;
+  letter-spacing:6px;
+  margin-bottom:10px;
+  text-shadow:0 0 30px #315cff;
+}
+
+.subtitle{
+  color:#c8cde0;
+  font-size:13px;
+  letter-spacing:3px;
+  margin-bottom:35px;
+}
+
+.vault{
+  width:190px;
+  height:190px;
+  margin:0 auto 35px;
+  border:2px solid #687cff;
+  border-radius:25px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(145deg,#11182c,#070912);
+  box-shadow:
+    0 0 25px #315cff66,
+    inset 0 0 35px #315cff22;
+  position:relative;
+}
+
+.vault:before{
+  content:"";
+  width:75px;
+  height:75px;
+  border:3px solid #9eabff;
+  border-radius:50%;
+  position:absolute;
+}
+
+.lock{
+  font-size:48px;
+  z-index:2;
+}
+
+.players{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:10px;
+  margin:25px 0;
+}
+
+.player{
+  height:48px;
+  border:1px solid #303957;
+  border-radius:10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#0b0f1c;
+  color:#aab4d6;
+  font-size:13px;
+}
+
+.player:hover{
+  border-color:#7587ff;
+  box-shadow:0 0 15px #315cff55;
+}
+
+.info{
+  border:1px solid #252d49;
+  border-radius:16px;
+  padding:20px;
+  background:#080b14cc;
+  margin-top:25px;
+}
+
+.info h2{
+  font-size:15px;
+  letter-spacing:3px;
+  margin-bottom:15px;
+  color:#aab8ff;
+}
+
+.rules{
+  text-align:left;
+  color:#b8bfd3;
+  font-size:14px;
+  line-height:1.9;
+}
+
+.highlight{
+  margin-top:20px;
+  padding:15px;
+  border-radius:12px;
+  background:#12182a;
+  border:1px solid #37436d;
+  color:white;
+  font-size:13px;
+  line-height:1.7;
+  letter-spacing:1px;
+}
+
+.event{
+  margin-top:25px;
+  padding:18px;
+  border:1px solid #533747;
+  border-radius:14px;
+  background:linear-gradient(135deg,#120b13,#0a0c15);
+}
+
+.date{
+  color:#ff9baa;
+  font-size:20px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.time{
+  margin-top:8px;
+  color:#c8cde0;
+}
+
+.badge{
+  display:inline-block;
+  margin-top:15px;
+  padding:8px 15px;
+  border:1px solid #a34a5c;
+  border-radius:30px;
+  color:#ff9baa;
+  font-size:11px;
+  letter-spacing:2px;
+}
+
+.start{
+  margin-top:30px;
+  width:100%;
+  padding:17px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(90deg,#526cff,#754cff);
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  letter-spacing:2px;
+  box-shadow:0 0 25px #526cff55;
+}
+
+.start:active{
+  transform:scale(.98);
+}
+
+.footer{
+  margin-top:25px;
+  color:#626b85;
+  font-size:11px;
+  letter-spacing:3px;
+}
+
+@media(max-width:420px){
+  h1{
+    font-size:40px;
+    letter-spacing:4px;
+  }
+
+  .players{
+    gap:7px;
+  }
+
+  .player{
+    height:42px;
+    font-size:11px;
+  }
+
+  .vault{
+    width:160px;
+    height:160px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="glow"></div>
+
+<div class="screen">
+
+<div class="box">
+
+<div class="brand">
+VIBE ON AGENCY PRESENTS
+</div>
+
+<h1>THE LAST 15</h1>
+
+<div class="subtitle">
+SOLVE • SURVIVE • CHOOSE THE ELIMINATION
+</div>
+
+<div class="vault">
+<div class="lock">🔒</div>
+</div>
+
+<div class="players">
+<div class="player">PLAYER 01</div>
+<div class="player">PLAYER 02</div>
+<div class="player">PLAYER 03</div>
+<div class="player">PLAYER 04</div>
+<div class="player">PLAYER 05</div>
+<div class="player">PLAYER 06</div>
+<div class="player">PLAYER 07</div>
+<div class="player">PLAYER 08</div>
+<div class="player">PLAYER 09</div>
+<div class="player">PLAYER 10</div>
+<div class="player">PLAYER 11</div>
+<div class="player">PLAYER 12</div>
+<div class="player">PLAYER 13</div>
+<div class="player">PLAYER 14</div>
+<div class="player">PLAYER 15</div>
+</div>
+
+<div class="info">
+
+<h2>HOW THE GAME WORKS</h2>
+
+<div class="rules">
+1. NEW TASK — Every round brings a different challenge.<br>
+2. COMPLETE IT FIRST — The fastest correct player wins.<br>
+3. SECRET ELIMINATION — Winner chooses ONE player.<br>
+4. NEW ROUND — The remaining players continue.<br>
+5. LAST ONE STANDING — Only one player survives.
+</div>
+
+<div class="highlight">
+COMPLETE THE TASK FIRST<br>
+↓<br>
+WIN THE POWER<br>
+↓<br>
+SECRETLY ELIMINATE 1 PLAYER<br>
+↓<br>
+SURVIVE
+</div>
+
+</div>
+
+<div class="event">
+
+<div class="date">
+26 SEPTEMBER 2026
+</div>
+
+<div class="time">
+9:00 PM • ROOM ID: 11214916
+</div>
+
+<div class="badge">
+LIMITED ENTRY • ONLY 15 PLAYERS
+</div>
+
+</div>
+
+<button class="start" onclick="startGame()">
+ENTER THE GAME
+</button>
+
+<div class="footer">
+15 ENTER • ONE SURVIVES
+</div>
+
+</div>
+</div>
+
+<script>
+function startGame(){
+  alert("THE OVERSEER: Your game will begin soon. Stay ready.");
+}
+</script>
+
+</body>
+</html>
